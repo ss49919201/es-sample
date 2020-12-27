@@ -1,0 +1,54 @@
+{
+    "query": {
+        "bool": {
+            "must": [
+                {
+                    "match": {
+                        "title": "is"
+                    }
+                },
+                {
+                    "match": {
+                        "title": "pen"
+                    }
+                }
+            ],
+            "should": [
+                {
+                    "match": {
+                        "title": "that"
+                    }
+                },
+                {
+                    "match": {
+                        "title": "pen"
+                    }
+                }
+            ],
+            "must_not": [
+                {
+                    "match": {
+                        "title": ""
+                    }
+                },
+                {
+                    "match": {
+                        "title": ""
+                    }
+                }
+            ],
+            "filter": [
+                {
+                    "match": {
+                        "title": "this"
+                    }
+                },
+                {
+                    "match": {
+                        "title": "pen"
+                    }
+                }
+            ]
+        }
+    }
+}
