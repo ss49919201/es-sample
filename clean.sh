@@ -1,3 +1,3 @@
 #!/bin/bash
-docker stop elasticsearch
-docker rm elasticsearch
+docker rm $(docker stop elasticsearch) 
+docker network rm somenetwork
