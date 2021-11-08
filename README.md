@@ -37,11 +37,7 @@ curl 'http://localhost:9200/_cluster/health?pretty=true'
 - sample_doc.json
 
 ```sh
-curl -H "Content-Type: application/json" -XPOST localhost:9200/index/type -d '{
-    "body": "p",
-    "number": 99,
-    "createdAt": "2021-11-08T21:56:26.74408+09:00"
-}'
+curl -H "Content-Type: application/json" -XPOST localhost:9200/index/type -d @sample_doc.json
 ```
 
 ## 自動マッピングの禁止
@@ -59,17 +55,10 @@ curl -H "Content-Type: application/json" -XPOST localhost:9200/index/type -d '{
 - https://{エンドポイント}/_search
 - query.json
 
+```sh
+curl -H "Content-Type: application/json" -XGET localhost:9200/index/_search -d @match_all.json
 ```
-curl -H "Content-Type: application/json" -XGET localhost:9200/index/_search -d '{
-    "from" : 0,
-    "size" : 1,
-    "query": {
-        "function_score": {
-            "query": {
-                "match_all": {}
-            },
-            "random_score": {}
-        }
-    }
-}'
+
+```sh
+curl -H "Content-Type: application/json" -XGET localhost:9200/index/_search -d @random_score.json
 ```
