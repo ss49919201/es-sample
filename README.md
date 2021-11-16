@@ -1,14 +1,20 @@
 # セットアップ
 
+## Elasticsearchのみ
+
 ```sh
 ./init.sh
 ```
 
-# 掃除
-
 ```sh
 ./clean.sh
 ```
+## Elasticsearch + Kibana
+
+```
+docker-compose up -d
+```
+
 # クエリ
 
 ※6系以降 **Content-Type** 必須
