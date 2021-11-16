@@ -37,7 +37,7 @@ curl 'http://localhost:9200/_cluster/health?pretty=true'
 - sample_doc.json
 
 ```sh
-curl -H "Content-Type: application/json" -XPOST localhost:9200/index/type -d @sample_doc.json
+curl -H "Content-Type: application/json" -XPOST localhost:9200/index/type --data-binary @sample_doc_2.json
 ```
 
 ## 自動マッピングの禁止
